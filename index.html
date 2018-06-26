@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Aqua FPS</title>
+    <link rel="shortcut icon" href="img/logo.png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    
+    <!-- StyleSheets -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  </head>
+
+  <body style="background-image: url('img/bground.jpeg')" id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand" href="#page-top">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpeg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#twitch">Twitch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#youtube">Youtube</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#twitter">Twitter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#merch">Cool Clothes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#rust">The Aquarium</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="https://teespring.com/stores/aquafps">Teespring</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="portal-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">AQUA
+            <span class="text-primary">FPS</span>
+          </h1>
+          <div class="subheading mb-5">
+              Cool Clothes
+          </div>
+          <p class="mb-5">Hi. I'm Ian. I live in New York City. I really like YouTube, video games, and everything internet related.<br> 
+            I also consider myself a potato chip connoisseur. Here you'll find a bunch of content of stuff I like. Hope you enjoy!</p>
+        </div>
+      </section>
+
+      <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="twitch">
+          <div class="my-auto">
+            <h2 class="mb-5">Twitch.TV</h2>
+            <div id="twitch-embed">
+
+            </div>
+          </div>
+        </section>
+
+      <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="youtube">
+          <div class="my-auto">
+            <h2 class="mb-5">Youtube</h2>
+            <div style="text-align: center;">
+              <iframe width="1200" height="675" src="http://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=macaws7" frameborder="0" allowfullscreen></iframe> 
+            </div>
+          </div>
+        </section>
+
+      <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="twitter">
+          <div class="my-auto" style="text-align: center;">
+            <a class="twitter-timeline" data-height="1000" data-width="600" data-dnt="true" data-theme="light" href="https://twitter.com/AquaFPSgaming?ref_src=twsrc%5Etfw">Tweets by AquaFPSgaming</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </section>
+
+      <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="merch">
+          <div class="my-auto">
+            <h2 class="mb-5">Cool Clothes</h2>
+            <div class="row">
+              <embed src="https://www.creatorsclub.net/product-category/aquafps/" style="width:100%; height: 800px;">
+            </div>
+          </div>
+        </section>
+
+      <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="rust">
+        <div class="my-auto">
+          <h2 class="mb-5">The Aquarium</h2>
+          <iframe src="https://cdn.battlemetrics.com/b/horizontal500x80px/1613503.html?foreground=%23EEEEEE&background=%23222222&lines=%23333333&linkColor=%231185ec&chartColor=%23ff0700" frameborder=0 style="border:0" name="fpdmr"></iframe>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Twitch/Aquarium -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: "100%",
+        height: 675,
+        channel: "aquafpsgaming"
+      });
+    </script>
+
+    <script type="application/javascript">window.addEventListener('message',function(e){if(e.data.uid&&e.data.type==='sizeUpdate'){var i = document.querySelector('iframe[name="'+e.data.uid+'"]');i.style.width = e.data.payload.width;i.style.height = e.data.payload.height;}});</script>
+  </body>
+
+</html>
