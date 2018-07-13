@@ -67,6 +67,10 @@ h2 {
   color: #BD5D38;
 }
 
+#sideNav {
+  display: none;
+}
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
   text-transform: uppercase;
@@ -110,6 +114,14 @@ h2 {
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
   }
+}
+
+.nav-item:hover {
+  transform: scale(1.3);
+}
+
+.img-profile:hover {
+  transform: scale(1.1);
 }
 
 section.portal-section {

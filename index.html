@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Aqua FPS</title>
-    <link rel="shortcut icon" href="img/logo.png" />
+    <link rel="shortcut icon" href="img/aqua.ico" type="image/x-icon">
+    <link rel="icon" href="img/aqua.ico" type="image/x-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -15,7 +16,6 @@
     <!-- StyleSheets -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.min.css" rel="stylesheet">
-
   </head>
 
   <body style="background-image: url('img/bground.jpeg')" id="page-top">
@@ -56,12 +56,8 @@
 
       <section class="portal-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
-          <h1 class="mb-0">AQUA
-            <span class="text-primary">FPS</span>
+          <h1 class="mb-0" id="name1">
           </h1>
-          <div class="subheading mb-5">
-              Cool Clothes
-          </div>
           <p class="mb-5">Hi. I'm Ian. I live in New York City. I really like YouTube, video games, and everything internet related.<br> 
             I also consider myself a potato chip connoisseur. Here you'll find a bunch of content of stuff I like. Hope you enjoy!</p>
         </div>
@@ -80,7 +76,7 @@
           <div class="my-auto">
             <h2 class="mb-5">Youtube</h2>
             <div style="text-align: center;">
-              <iframe width="1200" height="675" src="http://www.youtube.com/embed?max-results=1&controls=0&showinfo=0&rel=0&listType=user_uploads&list=macaws7" frameborder="0" allowfullscreen></iframe> 
+              <iframe width="1200" height="675" src="http://www.youtube.com/embed?max-results=1&controls=1&showinfo=1&rel=0&listType=user_uploads&list=macaws7" frameborder="0" allowfullscreen></iframe> 
             </div>
           </div>
         </section>
@@ -95,7 +91,7 @@
           <div class="my-auto">
             <h2 class="mb-5">Cool Clothes</h2>
             <div class="row">
-              <embed src="https://www.creatorsclub.net/product-category/aquafps/" style="width:100%; height: 800px;">
+                <embed src="https://www.creatorsclub.net/product-category/aquafps/" style="width:100%; height: 800px;">
             </div>
           </div>
         </section>
@@ -109,19 +105,10 @@
 
     </div>
 
-    <!-- Bootstrap core JavaScript -->
+    <!-- Javascipt -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Twitch/Aquarium -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: "100%",
-        height: 675,
-        channel: "aquafpsgaming"
-      });
-    </script>
-
+    <script src="./js/main.js"></script>
     <script type="application/javascript">window.addEventListener('message',function(e){if(e.data.uid&&e.data.type==='sizeUpdate'){var i = document.querySelector('iframe[name="'+e.data.uid+'"]');i.style.width = e.data.payload.width;i.style.height = e.data.payload.height;}});</script>
   </body>
 
