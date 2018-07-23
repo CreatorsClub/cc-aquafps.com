@@ -38,11 +38,14 @@ if(isset($_POST['twitch']) && isset($_POST['name']) && isset($_POST['message']) 
             header('Location: ../index.html');
         }
     }
-    else {
-        header('Location: ../index.html?sumbit=n');
+    
+    catch (HttpException $ex) {
+        echo 'An error has occured';
     }
-} catch (HttpException $ex) {
-    echo 'An error has occured';
+}
+else 
+{
+    header('Location: ../index.html?sumbit=n');
 }
 
 ?>
