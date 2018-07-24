@@ -26,8 +26,21 @@ function typeWriter2() {
     }
 }
 
+function recaptchaCallback() {
+  document.getElementById('sub').removeAttr('disabled');
+}
+
 new Twitch.Embed("twitch-embed", {
     width: "100%",
     height: 675,
     channel: "aquafpsgaming"
   });
+
+var sub = window.location.search.substr(1);
+
+if(sub == 'n') {
+  document.getElementById('announcment').innerHTML = "You're Submission was not completed because your Twitch name is already entered."
+}
+else if(sub == 'y') {
+  document.getElementById('announcment').innerHTML = "Submission Sucessful. <strong>Good Luck!</strong>"
+}

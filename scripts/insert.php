@@ -1,51 +1,48 @@
 <?php
 require('connect.php');
 
-if(isset($_POST['twitch']) && isset($_POST['name']) && isset($_POST['message']) && isset($_GET['g-recaptcha-response']))
+if(isset($_POST['twitch']) && isset($_POST['name']) && isset($_POST['message']) && isset($_POST['g-recaptcha-response']))
 {
     $twitch = filter_input(INPUT_POST, 'twitch', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $cres = filter_input(INPUT_GET, 'g-recaptcha-response', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    
-    $r = new HttpRequest('https://www.google.com/recaptcha/api/siteverify', HttpRequest::METH_POST);
-    $r->addPostFields(array('secret' => '6LdGvGUUAAAAANGD_Bb-_rgPSP1dspmyNogOdJak', 'response' => $cres));
+    $cres = filter_input(INPUT_POST, 'g-recaptcha-response', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $secret = '6LdGvGUUAAAAANGD_Bb-_rgPSP1dspmyNogOdJak';
+
     try {
-        $response = $r->send()->getBody();
-        
-        $resp = json_decode($response, true);
-        
-        if($resp['success'] == true)
+        $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$cres);
+        $responseData = json_decode($verifyResponse);
+
+        if($responseData->success)
         {
             $query = "INSERT INTO entry (name, twitch, message) VALUES (:name, :twitch, :message)";
             $result = $db->prepare($query);
             $result->bindValue(':twitch', $twitch);
             $result->bindValue(':name', $name);
             $result->bindValue(':message', $message);
-            
+
             if($result->execute()) {
                 echo 'Entry Sucessful redirecting you back!';
-                header('Location: ../index.html?sumbit=y');
+                header('Location: ../index.html?y');
             }
             else
             {
                 echo 'Entry failed. You may be seeing this because the user has already entered.';
-                header('Location: ../index.html?sumbit=n');
+                header('Location: ../index.html?n');
             }
         }
         else
-        {	
-            header('Location: ../index.html');
+        {
+           header('Location: ../index.html?n');
         }
     }
-    
     catch (HttpException $ex) {
         echo 'An error has occured';
     }
 }
-else 
+else
 {
-    header('Location: ../index.html?sumbit=n');
+    header('Location: ../index.html');
 }
 
 ?>
