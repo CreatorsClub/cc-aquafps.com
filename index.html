@@ -55,53 +55,53 @@
 </nav>
 
 <div class="container-fluid p-0">
-    
+  
   <section class="portal-section p-3 p-lg-5 d-flex d-column" id="about">
     
     <div class="my-auto">
-        <div class="alert alert-success" id="announcment">
-            <strong>AquaFPS</strong> is giving away free merch. You can enter <a href="#contest">here</a>
-          </div>
+      <div class="alert alert-success" id="announcment">
+        <strong>AquaFPS</strong> is giving away free merch. You can enter <a href="#contest">here</a>
+      </div>
       <h1 class="mb-0" id="name1">
       </h1>
       <p class="mb-5">Hi. I'm Ian. I live in New York City. I really like YouTube, video games, and everything internet related.<br> 
         I also consider myself a potato chip connoisseur. Here you'll find a bunch of content of stuff I like. Hope you enjoy!</p>
       </div>
     </section>
-
+    
     <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="contest">
-        <div class="my-auto">
-          <h2 class="mb-5">Enter to win some Cool Clothes</h2>
-          <p>One entry per twitch account. Must be following AquaFPS and the account must be older than 2 months</p>
-          <form class="contact100-form validate-form" action="scripts/insert.php" method="POST">
+      <div class="my-auto">
+        <h2 class="mb-5">Enter to win some Cool Clothes</h2>
+        <p>One entry per twitch account. Must be following AquaFPS and the account must be older than 2 months</p>
+        <form class="contact100-form validate-form" action="scripts/insert.php" method="POST">
+          
+          <div class="wrap-input100 rs1-wrap-input100 validate-input">
+            <span class="label-input100">Name</span>
+            <input class="input100" type="text" name="name" placeholder="Enter your name.." required>
+            <span class="focus-input100"></span>
+          </div>
+          
+          <div class="wrap-input100 rs1-wrap-input100 validate-input">
+            <span class="label-input100">Twitch Username</span>
+            <input class="input100" type="text" name="twitch" placeholder="Enter your email address.." required>
+            <span class="focus-input100"></span>
+          </div>
+          
+          <div class="wrap-input100 validate-input">
+            <span class="label-input100">Message</span>
+            <textarea class="input100" name="message" placeholder="Leave AquaFPS a message.." required></textarea>
+            <span class="focus-input100"></span>
+          </div>
+          
+          <div class="container-contact100-form-btn">
+            <div class="g-recaptcha" data-sitekey="6LdGvGUUAAAAAOWfFQkGw-mNWjzeu1c8-QqFX_C5" data-callback="recaptchaCallback"></div>
+            <button class="contact100-form-btn" type="submit" id="sub" disabled>
+              Enter
+            </button>
             
-              <div class="wrap-input100 rs1-wrap-input100 validate-input">
-                <span class="label-input100">Name</span>
-                <input class="input100" type="text" name="name" placeholder="Enter your name.." required>
-                <span class="focus-input100"></span>
-              </div>
-              
-              <div class="wrap-input100 rs1-wrap-input100 validate-input">
-                <span class="label-input100">Twitch Username</span>
-                <input class="input100" type="text" name="twitch" placeholder="Enter your email address.." required>
-                <span class="focus-input100"></span>
-              </div>
-              
-              <div class="wrap-input100 validate-input">
-                <span class="label-input100">Message</span>
-                <textarea class="input100" name="message" placeholder="Leave AquaFPS a message.." required></textarea>
-                <span class="focus-input100"></span>
-              </div>
-              
-              <div class="container-contact100-form-btn">
-                  <div class="g-recaptcha" data-sitekey="6LdGvGUUAAAAAOWfFQkGw-mNWjzeu1c8-QqFX_C5" data-callback="recaptchaCallback"></div>
-                <button class="contact100-form-btn" type="submit" id="sub" disabled>
-                    Enter
-                </button>
-                
-              </div>
-            </form>
-        </div>
+          </div>
+        </form>
+      </div>
     </section>
     
     <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="twitch">
@@ -147,10 +147,15 @@
     </div>
     
     <!-- Javascipt -->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script> 
+      function recaptchaCallback() {
+        document.getElementById('sub').removeAttr('disabled');
+      }
+    </script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>\
+    <script src="./js/main.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
-    <script src="./js/main.js"></script>
     <script type="application/javascript">window.addEventListener('message',function(e){if(e.data.uid&&e.data.type==='sizeUpdate'){var i = document.querySelector('iframe[name="'+e.data.uid+'"]');i.style.width = e.data.payload.width;i.style.height = e.data.payload.height;}});</script>
   </body>
   

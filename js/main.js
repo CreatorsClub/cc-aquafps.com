@@ -26,10 +26,6 @@ function typeWriter2() {
     }
 }
 
-function recaptchaCallback() {
-  document.getElementById('sub').removeAttr('disabled');
-}
-
 new Twitch.Embed("twitch-embed", {
     width: "100%",
     height: 675,
