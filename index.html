@@ -15,7 +15,7 @@
   
   <!-- StyleSheets -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/styles.min.css" rel="stylesheet">
 </head>
 
 <body style="background-image: url('img/bground.jpeg')" id="page-top">
@@ -59,8 +59,8 @@
   <section class="portal-section p-3 p-lg-5 d-flex d-column" id="about">
     
     <div class="my-auto">
-      <div class="alert alert-success" id="announcment">
-        <strong>AquaFPS</strong> is giving away free merch. You can enter <a href="#contest">here</a>
+      <div class="alert alert-warning" id="announcment">
+        <strong>DO YOU</strong> wanna win Cool Clothes! Well you can enter <a href="#contest">here</a> if you want.
       </div>
       <h1 class="mb-0" id="name1">
       </h1>
@@ -72,7 +72,7 @@
     <section class="portal-section p-3 p-lg-5 d-flex flex-column" id="contest">
       <div class="my-auto">
         <h2 class="mb-5">Enter to win some Cool Clothes</h2>
-        <p>One entry per twitch account. Must be following AquaFPS and the account must be older than 2 months</p>
+        <p>One entry per twitch account. Must be following AquaFPS and the account must be older than 2 weeks.<br/> Contest Ends August 8th. Winner will be announced on the TubeDudes Podcast.</p>
         <form class="contact100-form validate-form" action="scripts/insert.php" method="POST">
           
           <div class="wrap-input100 rs1-wrap-input100 validate-input">
@@ -83,7 +83,7 @@
           
           <div class="wrap-input100 rs1-wrap-input100 validate-input">
             <span class="label-input100">Twitch Username</span>
-            <input class="input100" type="text" name="twitch" placeholder="Enter your email address.." required>
+            <input class="input100" type="text" name="twitch" placeholder="Enter your twitch username.." required>
             <span class="focus-input100"></span>
           </div>
           
@@ -96,7 +96,7 @@
           <div class="container-contact100-form-btn">
             <div class="g-recaptcha" data-sitekey="6LdGvGUUAAAAAOWfFQkGw-mNWjzeu1c8-QqFX_C5" data-callback="recaptchaCallback"></div>
             <button class="contact100-form-btn" type="submit" id="sub" disabled>
-              Enter
+              GIVE ME MY COOL CLOTHES
             </button>
             
           </div>
@@ -152,10 +152,10 @@
         document.getElementById('sub').removeAttribute('disabled');
       }
     </script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>\
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script src="./js/main.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script type="application/javascript">window.addEventListener('message',function(e){if(e.data.uid&&e.data.type==='sizeUpdate'){var i = document.querySelector('iframe[name="'+e.data.uid+'"]');i.style.width = e.data.payload.width;i.style.height = e.data.payload.height;}});</script>
   </body>
   

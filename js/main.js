@@ -35,8 +35,10 @@ new Twitch.Embed("twitch-embed", {
 var sub = window.location.search.substr(1);
 
 if(sub == 'n') {
-  document.getElementById('announcment').innerHTML = "You're Submission was not completed because your Twitch name is already entered."
+  document.getElementById('announcment').innerHTML = "You're Submission was not completed because your twitch name is already entered."
+  document.getElementById('announcment').className = ('alert alert-danger');
 }
 else if(sub == 'y') {
   document.getElementById('announcment').innerHTML = "Submission Sucessful. <strong>Good Luck!</strong>"
+  document.getElementById('announcment').className = ('alert alert-success');
 }
